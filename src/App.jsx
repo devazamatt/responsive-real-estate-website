@@ -44,7 +44,6 @@ const StyledSummary = styled((props) => (
   '&.Mui-expanded': {
     minHeight: 'initial'
   },
-  flexDirection: 'row-reverse',
   '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
     transform: 'rotate(180deg)'
   },
@@ -55,7 +54,6 @@ const StyledSummary = styled((props) => (
     margin: 0
   },
   '& .MuiAccordionSummary-expandIconWrapper': {
-    order: -1,
     color: 'hsl(228, 66%, 53%)'
   }
 }))
