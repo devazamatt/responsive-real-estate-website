@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react'
+
 import HomeImg from './assets/img/home.jpg'
 import LogoImg1 from './assets/img/logo1.png'
 import LogoImg2 from './assets/img/logo2.png'
@@ -9,9 +10,88 @@ import PopularImg2 from './assets/img/popular2.jpg'
 import PopularImg3 from './assets/img/popular3.jpg'
 import PopularImg4 from './assets/img/popular4.jpg'
 import PopularImg5 from './assets/img/popular5.jpg'
+import ValueImg from './assets/img/value.jpg'
+
+import {styled} from '@mui/material/styles'
+import Accordion from '@mui/material/Accordion'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import AccordionDetails from '@mui/material/AccordionDetails'
+
+const StyledAccordion = styled(Accordion)(({theme}) => ({
+  backgroundColor: '#fff',
+  border: '2px solid hsl(228, 99%, 98%)',
+  borderRadius: '0.5rem',
+  padding: '1rem 0.75rem',
+  boxShadow: 'none',
+  '&::before': {
+    height: 0
+  }
+}))
+
+const StyledSummary = styled((props) => (
+  <AccordionSummary
+    expandIcon={<i className="bx bxs-down-arrow"></i>}
+    {...props}
+  />
+))(({theme}) => ({
+  margin: 0,
+  minHeight: 'initial',
+  '&.Mui-expanded': {
+    minHeight: 'initial'
+  },
+  flexDirection: 'row-reverse',
+  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+    transform: 'rotate(90deg)'
+  },
+  '& .MuiAccordionSummary-content': {
+    margin: 0
+  },
+  '& .MuiAccordionSummary-content.Mui-expanded': {
+    margin: 0
+  },
+  '& .MuiAccordionSummary-expandIconWrapper': {
+    order: -1,
+    color: 'hsl(228, 66%, 53%)'
+  },
+  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+    transform: 'rotate(180deg)'
+  }
+}))
+
+const accordions = [
+  {
+    key: 'interest',
+    icon: <i className="bx bxs-shield-x value__accordion-icon"></i>,
+    title: 'Best interest rates on the market',
+    description: 'Price we provide is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.'
+  },
+  {
+    key: 'unstable',
+    icon: <i className="bx bxs-x-square value__accordion-icon"></i>,
+    title: 'Prevent unstable prices',
+    description: 'Price we provide is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.'
+  },
+  {
+    key: 'prices',
+    icon: <i className="bx bxs-bar-chart-square value__accordion-icon"></i>,
+    title: 'Best prices on the market ',
+    description: 'Price we provide is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.'
+  },
+  {
+    key: 'security',
+    icon: <i className="bx bxs-check-square value__accordion-icon"></i>,
+    title: 'Security of your data',
+    description: 'Price we provide is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.'
+  }
+]
 
 function App() {
   const [scrollHeader, setScrollHeader] = useState(false)
+  const [expanded, setExpanded] = useState('panel1')
+
+  const handleChange = (panel) => (event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false)
+  }
 
   useEffect(() => {
     const updateScrollDirection = () => {
@@ -90,7 +170,7 @@ function App() {
           <div className="home__container container grid">
             <div className="home__data">
               <h1 className="home__title">
-                Discover <br /> Most Suitable <br /> Property
+                Discover <br/> Most Suitable <br/> Property
               </h1>
 
               <p className="home__description">
@@ -100,7 +180,7 @@ function App() {
 
               <form action="" className="home__search">
                 <i className='bx bxs-map'></i>
-                <input type="search" placeholder="Search by location" className="home__search-input" />
+                <input type="search" placeholder="Search by location" className="home__search-input"/>
                 <button className="button">Search</button>
               </form>
 
@@ -110,7 +190,7 @@ function App() {
                     9K <span>+</span>
                   </h1>
                   <span className="home__value-description">
-                    Premium <br /> Product
+                    Premium <br/> Product
                   </span>
                 </div>
 
@@ -119,7 +199,7 @@ function App() {
                     2K <span>+</span>
                   </h1>
                   <span className="home__value-description">
-                    Happy <br /> Customer
+                    Happy <br/> Customer
                   </span>
                 </div>
 
@@ -128,7 +208,7 @@ function App() {
                     28K <span>+</span>
                   </h1>
                   <span className="home__value-description">
-                    Awards <br /> Winning
+                    Awards <br/> Winning
                   </span>
                 </div>
               </div>
@@ -137,7 +217,7 @@ function App() {
             <div className="home__images">
               <div className="home__orbe"></div>
               <div className="home__img">
-                <img src={HomeImg} alt="" />
+                <img src={HomeImg} alt=""/>
               </div>
             </div>
           </div>
@@ -147,16 +227,16 @@ function App() {
         <section className="logos section">
           <div className="logos__container container grid">
             <div className="logos__img">
-              <img src={LogoImg1} alt="" />
+              <img src={LogoImg1} alt=""/>
             </div>
             <div className="logos__img">
-              <img src={LogoImg2} alt="" />
+              <img src={LogoImg2} alt=""/>
             </div>
             <div className="logos__img">
-              <img src={LogoImg3} alt="" />
+              <img src={LogoImg3} alt=""/>
             </div>
             <div className="logos__img">
-              <img src={LogoImg4} alt="" />
+              <img src={LogoImg4} alt=""/>
             </div>
           </div>
         </section>
@@ -172,7 +252,7 @@ function App() {
             <div className="popular__container swiper">
               <div className="swiper-wrapper">
                 <article className="popular__card swiper-slide">
-                  <img className="popular__img" src={PopularImg1} alt="" />
+                  <img className="popular__img" src={PopularImg1} alt=""/>
 
                   <div className="popular__data">
                     <h2 className="popular__price">
@@ -188,7 +268,7 @@ function App() {
                 </article>
 
                 <article className="popular__card swiper-slide">
-                  <img className="popular__img" src={PopularImg2} alt="" />
+                  <img className="popular__img" src={PopularImg2} alt=""/>
 
                   <div className="popular__data">
                     <h2 className="popular__price">
@@ -204,7 +284,7 @@ function App() {
                 </article>
 
                 <article className="popular__card swiper-slide">
-                  <img className="popular__img" src={PopularImg3} alt="" />
+                  <img className="popular__img" src={PopularImg3} alt=""/>
 
                   <div className="popular__data">
                     <h2 className="popular__price">
@@ -220,7 +300,7 @@ function App() {
                 </article>
 
                 <article className="popular__card swiper-slide">
-                  <img className="popular__img" src={PopularImg4} alt="" />
+                  <img className="popular__img" src={PopularImg4} alt=""/>
 
                   <div className="popular__data">
                     <h2 className="popular__price">
@@ -236,7 +316,7 @@ function App() {
                 </article>
 
                 <article className="popular__card swiper-slide">
-                  <img className="popular__img" src={PopularImg5} alt="" />
+                  <img className="popular__img" src={PopularImg5} alt=""/>
 
                   <div className="popular__data">
                     <h2 className="popular__price">
@@ -263,7 +343,49 @@ function App() {
 
         {/*<==================== VALUE ====================*/}
         <section className="value section" id="value">
+          <div className="value__container container grid">
+            <div className="value__images">
+              <div className="value__orbe"></div>
+              <div className="value__img">
+                <img src={ValueImg} alt=""/>
+              </div>
+            </div>
 
+            <div className="value__content">
+              <div className="value__data">
+                <span className="section__subtitle">Our Value</span>
+                <h2 className="section__title">Value We Give To You<span>.</span></h2>
+                <p className="value__description">
+                  We always ready to help by providing the best service for you.
+                  We believe a good place to live can make your life better.
+                </p>
+              </div>
+
+              <div className="value__accordion">
+                {accordions.map((accordion, index) => (
+                  <StyledAccordion
+                    key={accordion.key}
+                    expanded={expanded === `panel${index+1}`}
+                    onChange={handleChange(`panel${index+1}`)}
+                  >
+                    <StyledSummary>
+                      <div className="value__accordion-header">
+                        {accordion.icon}
+                        <h3 className="value__accordion-title">
+                          {accordion.title}
+                        </h3>
+                      </div>
+                    </StyledSummary>
+                    <AccordionDetails className="value__accordion-content">
+                      <p className="value__accordion-description">
+                        {accordion.description}
+                      </p>
+                    </AccordionDetails>
+                  </StyledAccordion>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
 
         {/*<==================== CONTACT ====================*/}
