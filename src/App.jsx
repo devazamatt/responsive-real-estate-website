@@ -45,7 +45,7 @@ const StyledSummary = styled((props) => (
     minHeight: 'initial'
   },
   '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-    transform: 'rotate(180deg)'
+    transform: 'rotate(-180deg)'
   },
   '& .MuiAccordionSummary-content': {
     margin: 0
