@@ -747,11 +747,6 @@ button {
   .home {
     padding-bottom: 0;
   }
-
-  .contact__card {
-    grid-template-columns: repeat(1, 1fr);
-    justify-content: center;
-  }
 }
 
 @media screen and (max-width: 375px) {
@@ -780,6 +775,11 @@ button {
   .popular__card {
     width: 230px;
     padding: 0.5rem 0.5rem 0.75rem;
+  }
+
+  .contact__card {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
   }
 
   .value__img,
