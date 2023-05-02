@@ -11,6 +11,7 @@ import PopularImg3 from './assets/img/popular3.jpg'
 import PopularImg4 from './assets/img/popular4.jpg'
 import PopularImg5 from './assets/img/popular5.jpg'
 import ValueImg from './assets/img/value.jpg'
+import ContactImg from './assets/img/contact.png'
 
 import {styled} from '@mui/material/styles'
 import Accordion from '@mui/material/Accordion'
@@ -44,6 +45,9 @@ const StyledSummary = styled((props) => (
   '&.Mui-expanded': {
     minHeight: 'initial'
   },
+  '& .MuiAccordionSummary-expandIconWrapper': {
+    color: 'hsl(228, 66%, 53%)'
+  },
   '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
     transform: 'rotate(-180deg)'
   },
@@ -53,9 +57,6 @@ const StyledSummary = styled((props) => (
   '& .MuiAccordionSummary-content.Mui-expanded': {
     margin: 0
   },
-  '& .MuiAccordionSummary-expandIconWrapper': {
-    color: 'hsl(228, 66%, 53%)'
-  }
 }))
 
 const accordions = [
@@ -376,7 +377,7 @@ function App() {
                         </h3>
                       </div>
                     </StyledSummary>
-                    <AccordionDetails className="value__accordion-content">
+                    <AccordionDetails>
                       <p className="value__accordion-description">
                         {accordion.description}
                       </p>
@@ -390,7 +391,90 @@ function App() {
 
         {/*<==================== CONTACT ====================*/}
         <section className="contact section" id="contact">
+          <div className="contact__container container grid">
+            <div className="contact__images">
+              <div className="contact__orbe"></div>
+              <div className="contact__img">
+                <img src={ContactImg} alt="" />
+              </div>
+            </div>
 
+            <div className="contact__content">
+              <div className="contact__data">
+                <span className="section__subtitle">Contact Us</span>
+                <h2 className="contact__title">
+                  Easy to Contact us<span>.</span>
+                </h2>
+                <p className="contact__description">
+                  Is there a problem finding your dream home? Need a
+                  guide in buying first home? or need a consultation
+                  on residential issues? just contact us.
+                </p>
+              </div>
+
+              <div className="contact__card">
+                <div className="contact__card-box">
+                  <div className="contact__card-info">
+                    <i className='bx bxs-phone-call'></i>
+                    <div>
+                      <h3 className="contact__card-title">
+                        Call
+                      </h3>
+                      <p className="contact__card-description">
+                        022.321.165.19
+                      </p>
+                    </div>
+                  </div>
+                  <a className="button contact__card-button" href="tel:02232116519">Call Now</a>
+                </div>
+
+                <div className="contact__card-box">
+                  <div className="contact__card-info">
+                    <i className='bx bxs-message-rounded-dots'></i>
+                    <div>
+                      <h3 className="contact__card-title">
+                        Chat
+                      </h3>
+                      <p className="contact__card-description">
+                        example@gmail.com
+                      </p>
+                    </div>
+                  </div>
+                  <a className="button contact__card-button" href="mailto:example@gmail.com">Chat Now</a>
+                </div>
+
+                <div className="contact__card-box">
+                  <div className="contact__card-info">
+                    <i className='bx bxs-video'></i>
+                    <div>
+                      <h3 className="contact__card-title">
+                        Video Call
+                      </h3>
+                      <p className="contact__card-description">
+                        022.321.165.19
+                      </p>
+                    </div>
+                  </div>
+                  <a className="button contact__card-button" href="#">Video Call Now</a>
+                </div>
+
+                <div className="contact__card-box">
+                  <div className="contact__card-info">
+                    <i className='bx bxs-envelope'></i>
+                    <div>
+                      <h3 className="contact__card-title">
+                        Message
+                      </h3>
+                      <p className="contact__card-description">
+                        022.321.165.19
+                      </p>
+                    </div>
+                  </div>
+                  <a className="button contact__card-button" href="mailto:some@gmail.com">Message Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/*<==================== SUBSCRIBE ====================*/}
