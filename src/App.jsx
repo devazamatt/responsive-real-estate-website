@@ -492,7 +492,116 @@ function App() {
 
       {/*<==================== FOOTER ====================*/}
       <footer className="footer section">
+        <div className="footer__container container grid">
+          <div>
+            <a className="footer__logo" href="#home">
+              REstate <i className="bx bxs-home-alt-2"></i>
+            </a>
+            <p className="footer__description">
+              Our vision is to make all people <br />
+              the best place to live for them.
+            </p>
+          </div>
 
+          <div className="footer__content">
+            <div>
+              <h3 className="footer__title">
+                About
+              </h3>
+              <ul className="footer__links">
+                <li>
+                  <a className="footer__link" href="#">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a className="footer__link" href="#">
+                    Features
+                  </a>
+                </li>
+                <li>
+                  <a className="footer__link" href="#">
+                    News & Blog
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="footer__title">
+                Company
+              </h3>
+              <ul className="footer__links">
+                <li>
+                  <a className="footer__link" href="#">
+                    How We Work?
+                  </a>
+                </li>
+                <li>
+                  <a className="footer__link" href="#">
+                    Capital
+                  </a>
+                </li>
+                <li>
+                  <a className="footer__link" href="#">
+                    Security
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="footer__title">
+                Support
+              </h3>
+              <ul className="footer__links">
+                <li>
+                  <a className="footer__link" href="#">
+                    FAQs
+                  </a>
+                </li>
+                <li>
+                  <a className="footer__link" href="#">
+                    Support center
+                  </a>
+                </li>
+                <li>
+                  <a className="footer__link" href="#">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="footer__title">
+                Follow us
+              </h3>
+              <ul className="footer__social">
+                <a className="footer__social-link" href="https://www.facebook.com/" target="_blank">
+                  <i className='bx bxl-facebook-circle'></i>
+                </a>
+                <a className="footer__social-link" href="https://www.instagram.com/" target="_blank">
+                  <i className='bx bxl-instagram-alt'></i>
+                </a>
+                <a className="footer__social-link" href="https://www.pinterest.com/" target="_blank">
+                  <i className='bx bxl-pinterest'></i>
+                </a>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer__info container">
+          <span className="footer__copy">
+            &#169; Bedimcode. All rigths reserved
+          </span>
+
+          <div className="footer__privacy">
+            <a href="#">Terms & Agreements</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
       </footer>
     </div>
   )
