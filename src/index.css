@@ -734,7 +734,7 @@ button {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 376px) {
   .container {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -754,7 +754,7 @@ button {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 376px) {
   .nav__menu {
     padding: 1.3rem 1.5rem;
   }
