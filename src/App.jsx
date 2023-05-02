@@ -23,8 +23,13 @@ const StyledAccordion = styled(Accordion)(({theme}) => ({
   borderRadius: '0.5rem',
   padding: '1rem 0.75rem',
   boxShadow: 'none',
+  margin: 0,
   '&::before': {
     height: 0
+  },
+  '&.Mui-expanded': {
+    margin: 0,
+    boxShadow: '0 12px 32px hsla(228, 66%, 45%, 0.1)'
   }
 }))
 
