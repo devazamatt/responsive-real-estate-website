@@ -479,7 +479,14 @@ function App() {
 
         {/*<==================== SUBSCRIBE ====================*/}
         <section className="subscribe section">
-
+          <div className="subscribe__container container">
+            <h1 className="subscribe__title">Get Started with REstate</h1>
+            <p className="subscribe__description">
+              Subscribe and find super attractive price
+              quotes from us, Find your residence soon
+            </p>
+            <a className="button subscribe__button" href="#">Get Started</a>
+          </div>
         </section>
       </main>
 
