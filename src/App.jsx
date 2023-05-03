@@ -56,7 +56,14 @@ const StyledSummary = styled((props) => (
   },
   '& .MuiAccordionSummary-content.Mui-expanded': {
     margin: 0
-  },
+  }
+}))
+
+const StyledDetails = styled(AccordionDetails)(({theme}) => ({
+  padding: '1.25rem 1.25rem 0.5rem 1.25rem',
+  [theme.breakpoints.up('md')]: {
+    padding: '1.25rem 2rem 0.5rem 2rem'
+  }
 }))
 
 const accordions = [
@@ -377,11 +384,11 @@ function App() {
                         </h3>
                       </div>
                     </StyledSummary>
-                    <AccordionDetails>
+                    <StyledDetails>
                       <p className="value__accordion-description">
                         {accordion.description}
                       </p>
-                    </AccordionDetails>
+                    </StyledDetails>
                   </StyledAccordion>
                 ))}
               </div>
@@ -594,7 +601,7 @@ function App() {
 
         <div className="footer__info container">
           <span className="footer__copy">
-            &#169; Bedimcode. All rigths reserved
+            &#169; REstate. All rigths reserved
           </span>
 
           <div className="footer__privacy">
